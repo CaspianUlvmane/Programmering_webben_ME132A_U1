@@ -31,24 +31,33 @@ You must use that function to code a new function (averg) that returns the avera
 all the numbers in an array
 
 The function only needs to work when all the elements are numbers
-
-TEST
-averg([1, 2, 3, 4, 5]); // Expected: 3
-averg([4,2]); // Expected: 3
-averg([-1,1]); // Expected: 0
-
-
-VIDEO:  Record a video where you explain how averg works line by line. Max 3 minutes.
-        This video must be called avergExplanation.
-
-
 */
 
-// Copy your earlier function here
-function adder ( _array ) {}
+// TEST
+//let average = [1, 2, 3, 4, 5] // Expected: 3
+//let average = [4,2] // Expected: 3
+let average = [-1,1] // Expected: 0
 
-function averg ( _array ) {
-  // in here you must use adder
+
+// VIDEO:  Record a video where you explain how averg works line by line. Max 3 minutes.
+//         This video must be called avergExplanation.
+
+
+
+// Copy your earlier function here
+function adder_infinite (_array) {
+  let sum = 0
+  for (let i = 0; i < _array.length; i++) {
+    sum = sum + _array[i];
+  }
+
+  return sum;
 }
 
+function averg ( _array ) {
+  
+  console.log(adder_infinite(_array)/_array.length);
 
+}
+
+averg(average)

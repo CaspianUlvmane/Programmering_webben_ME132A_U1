@@ -15,14 +15,12 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number
 
 
 */
-let body = document.querySelector("body");
+
 // E1:  Add an input field of type number to the HTML-file
-let Input = document.createElement("input");
-document.body.appendChild(Input);
+
 
 // E2:  Give the input field the id "input_test_1"
 
-Input.id = "input_test1";
 
 // E3:  Check what the attribute size does:
 //      https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text
@@ -30,10 +28,6 @@ Input.id = "input_test1";
 //      Make sure that the input field looks good for numbers from 0 to 99. (Pretty small)
 //      Use the attribute size for this.
 
-Input.type = "number"
-Input.size = "2";
-Input.max = "17";
-Input.min = "1";
 
 
 // E4:  Find out which attributes can be used to set a max and a min value
@@ -61,8 +55,6 @@ document.getElementById("input_test1").value = "13";
 //      the browser logs the current value of the input field on the console.
 //      Test this by manually changing the value of the input field. That is,
 //      by going to the webpage and changing that value.
-let consoleBtn = document.querySelector("#button_test_1");
-let id_test1 = document.querySelector("#input_test1");
 
 
 // E9:  NOTE that the value from the input field is a string, even if the input
@@ -85,11 +77,14 @@ let id_test1 = document.querySelector("#input_test1");
 //      logs the result to the console.
 
 function f1 (){
+    
+    let id_test1 = document.querySelector("#input_test1");
     console.log(parseInt(id_test1.value) + 23);
+    
 }
 
-consoleBtn.addEventListener("click", function (){console.log(id_test1.value)});
-consoleBtn.addEventListener("click", function (){f1()});
+document.querySelector("#button_test_1").addEventListener("click", function (){console.log(document.querySelector("#input_test1").value)});
+document.querySelector("#button_test_1").addEventListener("click", function (){f1()});
 
 // E12: Now make sure that F1 is called when the user clicks on #button_test_1
 //      Test it!
