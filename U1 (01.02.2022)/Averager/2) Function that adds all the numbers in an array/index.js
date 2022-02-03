@@ -47,10 +47,10 @@ function adder_infinite (_array) {
 }
 
 // TEST
-//let adder = [5, 2, 1, 7]; //should return 15
+let adder = [5, 2, 1, 7]; //should return 15
 
 //let adder = [1] // should return 1
-let adder = [0] // should return 0
+//let adder = [0] // should return 0
 
 console.log(adder.length);
 console.log(adder);
