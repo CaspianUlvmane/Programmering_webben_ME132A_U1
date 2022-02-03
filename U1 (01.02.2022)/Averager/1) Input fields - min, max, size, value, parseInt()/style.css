@@ -1,0 +1,18 @@
+#button_test_1 {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#button_test_1:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+}
+
+#button_test_1:active {
+    background-color: grey;
+    cursor: pointer;
+}
