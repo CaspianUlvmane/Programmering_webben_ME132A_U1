@@ -28,6 +28,8 @@ function gridMaker (gridContainer, R, C) {
         document.querySelector("#grid").appendChild( numberDiv )
         }
 
+        numberDiv.load(gridContainer)
+
         console.log(R*C)
 
       }
