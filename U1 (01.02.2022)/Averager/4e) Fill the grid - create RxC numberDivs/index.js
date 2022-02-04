@@ -16,3 +16,47 @@ VIDEO:  Record a video where you explain the two different ways (see above) of c
 */
 
 
+function gridMaker (gridContainer, R, C) {
+        
+        gridContainer.style.display = 'Grid';
+        gridContainer.style.gridTemplateRows = R + "fr";
+        gridContainer.style.gridTemplateColumns = C + "fr";
+
+        for (let i = 0; i < R*C; i++) {
+        let numberDiv = document.createElement("div");
+        numberDiv.innerHTML = randomNumber( 100 );
+        document.querySelector("#grid").appendChild( numberDiv )
+        }
+
+        console.log(R*C)
+
+      }
+
+      document.querySelector("button").addEventListener("click", function(){gridMaker(document.querySelector('#grid'), rowValue(), colValue())})
+
+  console.log(document.querySelector( "#inputRows").value)
+
+  function rowValue (){
+    
+    return document.querySelector( "#inputRows").value
+
+  }
+
+  function colValue (){
+    
+    return document.querySelector( "#inputCols").value
+
+  }
+
+//   function createNumberDiv (){
+
+//         let numberDiv = document.createElement("div");
+//         numberDiv.innerHTML = randomNumber( 100 );
+    
+//         return numberDiv;
+//     }
+    
+    function randomNumber ( max ) {
+        return Math.floor( max * Math.random() );
+      }
+    

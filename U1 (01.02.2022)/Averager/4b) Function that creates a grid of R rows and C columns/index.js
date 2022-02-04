@@ -1,5 +1,4 @@
-"use strict";
-
+'use strict'
 
 /*
 
@@ -27,3 +26,14 @@ The HTML-element #grid will however be empty since we have not appended any othe
 
 */
 
+function gridMaker (gridContainer, R, C) {
+
+  gridContainer.style.display = 'Grid';
+  gridContainer.style.gridTemplateRows = R + "fr";
+  gridContainer.style.gridTemplateColumns = C +"1fr";
+
+}
+
+gridMaker(document.querySelector('#grid'), 2, 6)
+
+console.log(document.querySelector(#inputRows.value))
