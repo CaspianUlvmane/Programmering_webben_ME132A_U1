@@ -24,6 +24,7 @@ function gridMaker (gridContainer, R, C) {
     gridContainer.style.display = 'Grid';
     gridContainer.style.gridTemplateRows = R + "fr";
     gridContainer.style.gridTemplateColumns = C + "fr";
+    gridContainer.innerHTML = "";
   
   }
 

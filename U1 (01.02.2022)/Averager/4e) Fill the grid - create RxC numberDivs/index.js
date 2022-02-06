@@ -1,5 +1,4 @@
-"use strict";
-
+'use strict'
 
 /*
 
@@ -15,50 +14,38 @@ VIDEO:  Record a video where you explain the two different ways (see above) of c
 
 */
 
-
 function gridMaker (gridContainer, R, C) {
-        
-        gridContainer.style.display = 'Grid';
-        gridContainer.style.gridTemplateRows = R + "fr";
-        gridContainer.style.gridTemplateColumns = C + "fr";
+  gridContainer.style.gridTemplateColumns = `repeat(${C}, 1fr)`
+  gridContainer.style.gridTemplateRows = `repeat(${R}, + 1fr)`
+  gridContainer.innerHTML = "";
+  for (let i = 0; i < R; i++) {
+    for (let J = 0; J < C; J++) {
+      let numberDiv = document.createElement('div')
+      numberDiv.innerHTML = randomNumber(100)
 
-        for (let i = 0; i < R*C; i++) {
-        let numberDiv = document.createElement("div");
-        numberDiv.innerHTML = randomNumber( 100 );
-        document.querySelector("#grid").appendChild( numberDiv )
-        }
-
-        numberDiv.load(gridContainer)
-
-        console.log(R*C)
-
-      }
-
-      document.querySelector("button").addEventListener("click", function(){gridMaker(document.querySelector('#grid'), rowValue(), colValue())})
-
-  console.log(document.querySelector( "#inputRows").value)
-
-  function rowValue (){
-    
-    return document.querySelector( "#inputRows").value
-
+      gridContainer.appendChild(numberDiv)
+    }
   }
+  // for (let i = 0;i < R*C; i++){
+  //         let numberDivs = document.createElement ("div");
+  //         gridContainer.appendChild(numberDivs)
+  //         }
+}
 
-  function colValue (){
-    
-    return document.querySelector( "#inputCols").value
+gridMaker(
+  document.querySelector('#grid'),
+  document.querySelector('#inputRows').value,
+  document.querySelector('#inputCols').value
+)
+console.log(document.querySelector('#inputRows').value)
 
-  }
+function createNumberDiv () {
+  let numberDiv = document.createElement('div')
+  numberDiv.innerHTML = randomNumber(100)
 
-//   function createNumberDiv (){
+  return numberDiv
+}
 
-//         let numberDiv = document.createElement("div");
-//         numberDiv.innerHTML = randomNumber( 100 );
-    
-//         return numberDiv;
-//     }
-    
-    function randomNumber ( max ) {
-        return Math.floor( max * Math.random() );
-      }
-    
+function randomNumber (max) {
+  return Math.floor(max * Math.random())
+}

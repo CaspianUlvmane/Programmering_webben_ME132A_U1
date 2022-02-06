@@ -18,9 +18,43 @@ We will make sure that the results (selected, amount, sum and average) are updat
 each time a number is selected or deselected.
 
 */
+function createNumberDiv (gridContainer) {
+let numberDiv = document.createElement ("div");
+numberDiv.innerHTML = randomNumber(100);
+numberDiv.addEventListener("click", function (){numberDiv.classList.toggle('selected')});
+document.querySelector('#grid').appendChild(numberDiv);
+gridContainer.appendChild(numberDiv);
 
+return numberDiv;
+}
 
+function randomNumber (max) {
+return Math.floor(max * Math.random())
+}
 
+function gridMaker (gridContainer, R, C) {
+  gridContainer.style.gridTemplateColumns = `repeat(${C}, 1fr)`
+  gridContainer.style.gridTemplateRows = `repeat(${R}, + 1fr)`
+  gridContainer.style.display = "grid"
+  gridContainer.innerHTML = "";
+  
+  // for (let i = 0; i < R; i++) {
+    //   for (let J = 0; J < C; J++) {
+      //     let numberDiv = document.createElement('div')
+      //     numberDiv.innerHTML = randomNumber(100)
+      
+      //     gridContainer.appendChild(numberDiv)
+      //   }
+      // }
+      for (let i = 0;i < R*C; i++){
+        createNumberDiv(gridContainer)
+
+      }
+    }
+
+document.querySelector("button").addEventListener("click", function(){gridMaker(document.querySelector("#grid"),document.querySelector("#inputRows").value,document.querySelector("#inputCols").value)})
+
+gridMaker(document.querySelector("#grid"),document.querySelector("#inputRows").value,document.querySelector("#inputCols").value)
 /*
 
 The idea is to use the functions we created at the beginning (adder, averg) to
@@ -150,4 +184,3 @@ function roundString(numberWithManyDecimals, decimals){
   var rounded = Math.pow(10, decimals);
   return (Math.round(numberWithManyDecimals * rounded) / rounded).toFixed(decimals);
 }
-
