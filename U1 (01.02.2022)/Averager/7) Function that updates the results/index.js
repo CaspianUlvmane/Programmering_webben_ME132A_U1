@@ -22,7 +22,6 @@ function createNumberDiv (gridContainer) {
   numberDiv.innerHTML = randomNumber(100)
   numberDiv.addEventListener('click', function () {
     numberDiv.classList.toggle('selected')
-    updateResults('selected')
   })
   document.querySelector('#grid').appendChild(numberDiv)
   gridContainer.appendChild(numberDiv)
