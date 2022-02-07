@@ -20,8 +20,6 @@ function gridMaker (gridContainer, R, C) {
   gridContainer.innerHTML = "";
   for (let i = 0; i < R; i++) {
     for (let J = 0; J < C; J++) {
-      let numberDiv = document.createElement('div')
-      numberDiv.innerHTML = randomNumber(100)
 
       gridContainer.appendChild(numberDiv)
     }

@@ -16,7 +16,7 @@ the values in #inputRows and #inputColumns as arguments.
 
 */
 
-document.querySelector("button").addEventListener("click", function(){gridMaker(document.querySelector('#grid'), 8, document.querySelector( "#inputCols").value)})
+document.querySelector("button").addEventListener("click", function(){gridMaker(document.querySelector('#grid'), document.querySelector( "#inputRows").value), document.querySelector( "#inputCols").value})
 
 
 function gridMaker (gridContainer, R, C) {
