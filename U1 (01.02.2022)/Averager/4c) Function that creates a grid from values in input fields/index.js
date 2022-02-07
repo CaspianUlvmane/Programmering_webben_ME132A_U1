@@ -16,28 +16,14 @@ the values in #inputRows and #inputColumns as arguments.
 
 */
 
-document.querySelector("button").addEventListener("click", function(){gridMaker(document.querySelector('#grid'), rowValue(), colValue())})
+document.querySelector("button").addEventListener("click", function(){gridMaker(document.querySelector('#grid'), 8, document.querySelector( "#inputCols").value)})
 
 
 function gridMaker (gridContainer, R, C) {
 
     gridContainer.style.display = 'Grid';
-    gridContainer.style.gridTemplateRows = R + "fr";
-    gridContainer.style.gridTemplateColumns = C + "fr";
-    gridContainer.innerHTML = "";
+    gridContainer.style.gridTemplateRows = `repeat(${R}, + 1fr)`;
+    gridContainer.style.gridTemplateColumns = `repeat(${C}, 1fr)`;
+    gridContainer.innerHTML = '';
   
-  }
-
-  console.log(document.querySelector( "#inputRows").value)
-
-  function rowValue (){
-    
-    return document.querySelector( "#inputRows").value
-
-  }
-
-  function colValue (){
-    
-    return document.querySelector( "#inputCols").value
-
   }
