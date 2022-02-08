@@ -40,21 +40,21 @@ The function only needs to work when all the elements are numbers.
 function adder_infinite (_array) {
   let sum = 0
   for (let i = 0; i < _array.length; i++) {
-    sum = sum + _array[i];
+    sum = sum + _array[i]
   }
 
-  return sum;
+  return sum
 }
 
 // TEST
-let adder = [5, 2, 1, 7]; //should return 15
+let adder = [5, 2, 1, 7] //should return 15
 
 //let adder = [1] // should return 1
 //let adder = [0] // should return 0
 
-console.log(adder.length);
-console.log(adder);
-console.log(adder_infinite(adder));
+console.log(adder.length)
+console.log(adder)
+console.log(adder_infinite(adder))
 
 // VIDEO:  Make a video where you explain how adder works line by line. Max 3 minutes.
 //         This video must be called adderExplanation.

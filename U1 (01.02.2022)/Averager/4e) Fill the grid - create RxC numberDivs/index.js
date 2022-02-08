@@ -14,29 +14,28 @@ VIDEO:  Record a video where you explain the two different ways (see above) of c
 
 */
 
-document.querySelector("button").addEventListener("click", function(){gridMaker(document.querySelector('#grid'), document.querySelector( "#inputRows").value), document.querySelector( "#inputCols").value})
+document.querySelector("button").addEventListener("click", function(){gridMaker(
+  document.querySelector('#grid'),
+  document.querySelector('#inputRows').value,
+  document.querySelector('#inputCols').value
+)})
 
 function gridMaker (gridContainer, R, C) {
   gridContainer.style.gridTemplateColumns = `repeat(${C}, 1fr)`
   gridContainer.style.gridTemplateRows = `repeat(${R}, + 1fr)`
   gridContainer.innerHTML = "";
-  for (let i = 0; i < R; i++) {
-    for (let J = 0; J < C; J++) {
-
-      gridContainer.appendChild(numberDiv)
-    }
-  }
-  // for (let i = 0;i < R*C; i++){
-  //         let numberDivs = document.createElement ("div");
-  //         gridContainer.appendChild(numberDivs)
-  //         }
+  // for (let i = 0; i < R; i++) {
+  //   for (let J = 0; J < C; J++) {
+  //     let numberDiv = document.createElement ("div");
+  //     gridContainer.appendChild(numberDiv)
+  //   }
+  // }
+  for (let i = 0;i < R*C; i++){
+          let numberDivs = document.createElement ("div");
+          gridContainer.appendChild(numberDivs)
+          }
 }
 
-gridMaker(
-  document.querySelector('#grid'),
-  document.querySelector('#inputRows').value,
-  document.querySelector('#inputCols').value
-)
 
 function createNumberDiv () {
   let numberDiv = document.createElement('div')

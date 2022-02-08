@@ -34,9 +34,9 @@ The function only needs to work when all the elements are numbers
 */
 
 // TEST
-//let average = [1, 2, 3, 4, 5] // Expected: 3
+let average = [1, 2, 3, 4, 5] // Expected: 3
 //let average = [4,2] // Expected: 3
-let average = [-1,1] // Expected: 0
+//let average = [-1,1] // Expected: 0
 
 
 // VIDEO:  Record a video where you explain how averg works line by line. Max 3 minutes.
@@ -56,8 +56,10 @@ function adder_infinite (_array) {
 
 function averg ( _array ) {
   
-  console.log(adder_infinite(_array)/_array.length);
+  let averageNumber = adder_infinite(_array)/_array.length;
+
+  return averageNumber
 
 }
 
-averg(average)
+console.log(averg(average))
