@@ -1,4 +1,4 @@
-"use strict";
+'use strict'
 
 /*
 
@@ -12,43 +12,44 @@ from the grid by clicking on them.
 */
 
 function gridMaker (gridContainer, R, C) {
-    gridContainer.style.gridTemplateColumns = `repeat(${C}, 1fr)`
-    gridContainer.style.gridTemplateRows = `repeat(${R}, + 1fr)`
-    gridContainer.innerHTML = "";
-    // for (let i = 0; i < R; i++) {
-    //   for (let J = 0; J < C; J++) {
-    //     let numberDiv = document.createElement('div')
-    //     numberDiv.innerHTML = randomNumber(100)
-  
-    //     gridContainer.appendChild(numberDiv)
-    //   }
-    // }
-    for (let i = 0;i < R*C; i++){
-      createNumberDiv(gridContainer)
-    }
+  gridContainer.style.gridTemplateColumns = `repeat(${C}, 1fr)`
+  gridContainer.style.gridTemplateRows = `repeat(${R}, + 1fr)`
+  gridContainer.innerHTML = ''
+  // for (let i = 0; i < R; i++) {
+  //   for (let J = 0; J < C; J++) {
+  //     let numberDiv = document.createElement('div')
+  //     numberDiv.innerHTML = randomNumber(100)
+
+  //     gridContainer.appendChild(numberDiv)
+  //   }
+  // }
+  for (let i = 0; i < R * C; i++) {
+    createNumberDiv(gridContainer)
   }
-  
-  gridMaker(
-    document.querySelector('#grid'),
-    document.querySelector('#inputRows').value,
-    document.querySelector('#inputCols').value
-    )
-    console.log(document.querySelector('#inputRows').value)
-    
-    function createNumberDiv (gridContainer) {
-      let numberDiv = document.createElement ("div");
-      numberDiv.innerHTML = randomNumber(100)
-      numberDiv.addEventListener("click", function (){numberDiv.classList.toggle('selected')})
-      document.querySelector('#grid').appendChild(numberDiv)
-      gridContainer.appendChild(numberDiv)
-      
-    return numberDiv
-  }
-  
-  function randomNumber (max) {
-    return Math.floor(max * Math.random())
-  }
-  
+}
+
+gridMaker(
+  document.querySelector('#grid'),
+  document.querySelector('#inputRows').value,
+  document.querySelector('#inputCols').value
+)
+console.log(document.querySelector('#inputRows').value)
+
+function createNumberDiv (gridContainer) {
+  let numberDiv = document.createElement('div')
+  numberDiv.innerHTML = randomNumber(100)
+  numberDiv.addEventListener('click', function () {
+    numberDiv.classList.toggle('selected')
+  })
+  document.querySelector('#grid').appendChild(numberDiv)
+  gridContainer.appendChild(numberDiv)
+
+  return numberDiv
+}
+
+function randomNumber (max) {
+  return Math.floor(max * Math.random())
+}
 
 /*
 
@@ -58,7 +59,6 @@ Add CSS-rules for .selected to the CSS-file. A change of
 background-color and color is enough but feel free!
 
 */
-
 
 /*
 
@@ -70,8 +70,6 @@ or here:
 https://www.w3schools.com/howto/howto_js_toggle_class.asp
 
 */
-
-
 
 /*
 
@@ -88,5 +86,3 @@ The only thing the eventListener needs to do (so far) is to toggle the class "se
 the classList.
 
 */
-
-

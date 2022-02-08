@@ -1,5 +1,4 @@
-"use strict";
-
+'use strict'
 
 /*
 
@@ -16,14 +15,17 @@ the values in #inputRows and #inputColumns as arguments.
 
 */
 
-document.querySelector("button").addEventListener("click", function(){gridMaker(document.querySelector('#grid'), document.querySelector( "#inputRows").value), document.querySelector( "#inputCols").value})
-
+document.querySelector('button').addEventListener('click', function () {
+  gridMaker(
+    document.querySelector('#grid'),
+    document.querySelector('#inputRows').value
+  ),
+    document.querySelector('#inputCols').value
+})
 
 function gridMaker (gridContainer, R, C) {
-
-    gridContainer.style.display = 'Grid';
-    gridContainer.style.gridTemplateRows = `repeat(${R}, + 1fr)`;
-    gridContainer.style.gridTemplateColumns = `repeat(${C}, 1fr)`;
-    gridContainer.innerHTML = '';
-  
-  }
+  gridContainer.style.display = 'Grid'
+  gridContainer.style.gridTemplateRows = `repeat(${R}, + 1fr)`
+  gridContainer.style.gridTemplateColumns = `repeat(${C}, 1fr)`
+  gridContainer.innerHTML = ''
+}
